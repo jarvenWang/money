@@ -1,0 +1,115 @@
+<div class="in-curpage-wrap">
+	<a href="#">常规</a> —>
+	<a href="#" class="in-curpage-active">公告</a>
+</div>
+
+<div class="in-content-wrap">
+	<!-- 列表数据  -->
+	<table  id="myTable" class="tablesorter table  table-bordered ">
+		<thead>
+			<tr>
+				<th align="center">标题</th>
+				<th align="center">时间</th>
+				<th align="center">内容</th>
+				<th align="center">编辑</th>
+			</tr>
+		</thead>
+		<!-- <tbody>
+			<tr align="center">
+				<td align="center" colspan="11">没有数据</td>
+			</tr>
+		</tbody> -->
+		<tbody>
+			<tr >
+				<td align="center">zyz</td>
+				<td align="center">222222</td>
+				<td align="center">111</td>
+				<td align="center"><a href="javascript:;" class="com-smallbtn com-btn-color01 editer-btn">编辑</a><a href="javascript:;" class=" com-smallbtn com-btn-color02 ml5 del-btn">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center">jiage</td>
+				<td align="center">111111</td>
+				<td align="center">222</td>
+				<td align="center"><a href="javascript:;" class="com-smallbtn com-btn-color01 editer-btn">编辑</a><a href="javascript:;" class=" com-smallbtn com-btn-color02 ml5 del-btn">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center">jiage</td>
+				<td align="center">111111</td>
+				<td align="center">222</td>
+				<td align="center"><a href="javascript:;" class="com-smallbtn com-btn-color01 editer-btn">编辑</a><a href="javascript:;" class=" com-smallbtn com-btn-color02 ml5 del-btn">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center">jiage</td>
+				<td align="center">111111</td>
+				<td align="center">222</td>
+				<td align="center"><a href="javascript:;" class="com-smallbtn com-btn-color01 editer-btn">编辑</a><a href="javascript:;" class=" com-smallbtn com-btn-color02 ml5 del-btn">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center">jiage</td>
+				<td align="center">111111</td>
+				<td align="center">222</td>
+				<td align="center"><a href="javascript:;" class="com-smallbtn com-btn-color01 editer-btn">编辑</a><a href="javascript:;" class=" com-smallbtn com-btn-color02 ml5 del-btn">删除</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- //列表数据  -->
+
+	<!-- 编辑弹框 -->
+	<div  class="notice-editorbox" id="notice-box" style="display: none;">
+		 <div class="notice-con-box">
+		 	<form>
+					<div class="com-form-wrap">
+						<!-- input -->
+						<div class="com-form-group clearfix">
+							<label class="com-form-l com-fl com-lh">性别：</label>
+							<div class="com-form-r com-fl">
+								<input type="text" class="com-input-text">
+							</div>
+						</div>
+						<!-- //input -->
+						<!-- textarea -->
+						<div class="com-form-group clearfix">
+							<label class="com-form-l com-fl com-lh">内容介绍：</label>
+							<div class="com-form-r com-fl">
+								<textarea class="com-textarea"></textarea>
+							</div>
+						</div>
+						<!-- //textarea -->
+						<!-- button -->
+						<div class="com-form-group clearfix">
+							<label class="com-form-l com-fl"></label>
+							<div class="com-form-r com-fl">
+								<a href="javascript:;" class="com-bigbtn com-btn-color02 ">确认</a>
+							</div>
+						</div>
+						<!-- //button -->
+					</div>
+				</form>
+		 </div>
+	</div>
+	<!-- //编辑弹框 -->
+</div>	
+<script type="text/javascript">
+//tablesorter的初始化
+$(document).ready(function() { 
+	$("#myTable").tablesorter(); 
+} );	
+
+//编辑弹框
+$(".editer-btn").on("click",function(){
+	layer.open({
+		type: 1,
+		title: '公告修改',
+		shadeClose: true,
+		shade: 0.5,
+		area: ['600px', '50%'],
+		content: $("#notice-box")    //iframe的url
+	});
+})
+//删除弹框
+$(".del-btn").on("click",function(){
+	layer.confirm('确认删除？', {
+		btn: ['确认','取消'] //按钮
+	});
+})
+</script>	

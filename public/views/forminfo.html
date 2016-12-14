@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BS-后台</title>
+<link rel="stylesheet" href="../bower_components/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../styles/reset.css">
+<link rel="stylesheet" href="../styles/common.css">	
+<link rel="stylesheet" href="../styles/index.css">
+<link rel="stylesheet" href="../bower_components/layer/skin/layer.css">	
+<link rel="stylesheet" href="../bower_components/tablesorter/themes/blue/style.css">	
+<!-- 组件引入 start -->
+<script type="text/javascript" src="../bower_components/jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../bower_components/echarts/echarts.min.js"></script>	
+<script type="text/javascript" src="../bower_components/laydate/laydate.js"></script>	
+<script type="text/javascript" src="../bower_components/tablesorter/jquery.tablesorter.min.js"></script>	
+<script type="text/javascript" src="../bower_components/layer/layer.js"></script>
+<script type="text/javascript" src="../bower_components/jquery-audioPlay/jquery-audioPlay.js"></script>
+<!-- 组件引入 end -->
+<script type="text/javascript" src="../scripts/index.js"></script>
+</head>
+<body>
+<!-- moudle header start -->
+<div class="in-header-wrap clearfix">
+	<ul class="in-header-l ">
+		 <li class="in-iteml-fir in-item  in-hoverbg">
+		 	常规	
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">设置</a> </li> 
+		 		<li class="in-iteml-sec"><a href="#">公告</a></li>
+		 		<li class="in-iteml-sec"><a href="#">短信</a></li>
+		 		<li class="in-iteml-sec"><a href="#">账号</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	活动
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">模块</a></li>
+		 		<li class="in-iteml-sec"><a href="#">列表</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	会员
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">等级</a></li>
+		 		<li class="in-iteml-sec"><a href="#">层级</a></li>
+		 		<li class="in-iteml-sec"><a href="#">列表</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	代理
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">层级</a></li>
+		 		<li class="in-iteml-sec"><a href="#">公告</a></li>
+		 		<li class="in-iteml-sec"><a href="#">审核</a></li>
+		 		<li class="in-iteml-sec"><a href="#">列表</a></li>
+		 		<li class="in-iteml-sec"><a href="#">佣金计算</a></li>
+		 		<li class="in-iteml-sec"><a href="#">历史佣金</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	财务
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">接口</a></li>
+		 		<li class="in-iteml-sec"><a href="#">记录</a></li>
+		 		<li class="in-iteml-sec"><a href="#">账变</a></li>
+		 		<li class="in-iteml-sec"><a href="#">加扣款</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	记录
+		 	<ul class="in-itemmenu" >
+		 		<li class="in-iteml-sec"><a href="#">体育</a></li>
+		 		<li class="in-iteml-sec"><a href="#">彩票</a></li>
+		 		<li class="in-iteml-sec"><a href="#">视讯</a></li>
+		 		<li class="in-iteml-sec"><a href="#">老虎机</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	报表
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">全局</a></li>
+		 		<li class="in-iteml-sec"><a href="#">财务</a></li>
+		 		<li class="in-iteml-sec"><a href="#">游戏</a></li>
+		 		<li class="in-iteml-sec"><a href="#">对账</a></li>
+		 	</ul>
+		 </li>
+		 <li class="in-iteml-fir in-item">
+		 	分析
+		 	<ul class="in-itemmenu">
+		 		<li class="in-iteml-sec"><a href="#">会员</a></li>
+		 		<li class="in-iteml-sec"><a href="#">游戏</a></li>
+		 		<li class="in-iteml-sec"><a href="#">运营</a></li>
+		 	</ul>
+		 </li>
+	</ul>
+	<ul class="in-header-r ">
+		<li class="in-itemr-fir in-item in-item-custom ">
+			<!-- <a href="#">客服</a> -->
+			<ul class="in-itemmenu in-itemmenu-customer ">
+		 		<li class="in-iteml-sec"><a href="#">设置</a></li>
+		 		<li class="in-iteml-sec"><a href="#">应答</a></li>
+		 		<li class="in-iteml-sec"><a href="#">主动邀请</a></li>
+		 	</ul>
+		 	<span class="in-itemr-num">1</span>	
+		</li>
+		<li class="in-itemr-fir in-item in-item-operte ">
+			<!-- <a href="#">运营</a> -->
+			<ul class="in-itemmenu in-itemmenu-operate">
+		 		<li class="in-iteml-sec"><a href="#">运营状况</a></li>
+		 		<li class="in-iteml-sec"><a href="#">在线人数</a></li>
+		 		<li class="in-iteml-sec"><a href="#">下注反水</a></li>
+		 	</ul>	
+		</li>
+		<li class="in-itemr-fir in-item in-item-check">
+			<!-- <a href="#">审核</a> -->
+			<ul class="in-itemmenu in-itemmenu-check">
+		 		<li class="in-iteml-sec"><a href="#">优惠审核</a></li>
+		 		<li class="in-iteml-sec"><a href="#">代理审核</a></li>
+		 	</ul>	
+		</li>
+		<li class="in-itemr-fir in-item in-item-deposit">
+			<!-- <a href="#"> 存款</a> -->
+			<ul class="in-itemmenu in-itemmenu-check">
+		 		<li class="in-iteml-sec"><a href="#">入款处理</a></li>
+		 		<li class="in-iteml-sec"><a href="#">提款处理</a></li>
+		 	</ul>	
+		 	<span class="in-itemr-num">3</span>
+		</li>
+	</ul>
+</div>
+<!-- module header end  -->
+<div class="in-curpage-wrap">
+	<a href="#">报表</a> —>
+	<a href="#" class="in-curpage-active">会员页</a>
+</div>
+<!-- module  section start -->
+<div class="in-content-wrap">
+	<div class="com-form-wrap">
+		<div class="com-form-name com-form-item clearfix">
+			<label>用户名：</label>
+			<input type="text" placeholder="请输入您的账号">
+		</div>
+		<div class="com-form-password com-form-item clearfix">
+			<label>密码：</label>
+			<input type="password" placeholder="请输入您的密码">
+		</div>
+		<div class="com-form-sex com-form-item clearfix">
+			<label>性别：</label>
+			<div class="com-form-sex-r">
+				<input type="radio" name="sex">男
+				<input type="radio" name="sex" class="com-form-sex-sec">女
+			</div>
+		</div>
+		<div class="com-form-select com-form-item clearfix">
+			<label>类型：</label>
+			<div class="com-form-sel-r">
+				<select>
+					<option value="">会员类型</option>
+					<option value="">类型1</option>
+					<option value="">类型2</option>
+				</select>
+			</div>
+			
+		</div>
+		<div class="com-form-textarea com-form-item clearfix">
+			<label>资料介绍：</label>
+			<div class="com-form-area-r">
+				<textarea>
+					我的介绍
+				</textarea>
+			</div>
+		</div>
+		<div class="com-form-checkout com-form-item">
+			<div class="com-form-checkout-r ">
+				<input type="checkbox"><span>《同意该协议》<span>
+			</div>
+		</div>
+		<a href="#" class="com-form-btn ">确认</a>
+	</div>
+</div>
+<!-- module section end  -->
+
+
+</body>
+</html>

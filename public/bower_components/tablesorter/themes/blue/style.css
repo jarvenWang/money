@@ -1,0 +1,61 @@
+/**
+ *  全站表格样式 
+ */
+table.tablesorter {
+	font-family:"微软雅黑";
+	background-color: #CDCDCD;
+	/* margin:10px 0pt 15px; */
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+}
+ table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #2c3e50;
+	border: 1px solid #34495e;
+	font-size: 8pt;
+	height: 40px;
+	line-height: 23px;
+	color:#fff;
+}
+.in-content-wrap .table th{
+	border-top:1px solid red;
+}
+table.tablesorter thead tr .header {
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	height: 30px;
+	line-height: 30px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+table.tablesorter tbody tr:nth-child(odd) td {
+	background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+	background-color: #34495e;
+	border-top:1px solid #34495e;
+	/* border-bottom::1px solid #34495e; */
+}
+.table{
+	margin-bottom: 0;
+}
+.table thead th{
+	text-align: center;
+}
+.table>thead:first-child>tr:first-child>th {
+    border-top: 1px solid #34495e;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6;
+}
