@@ -18,12 +18,14 @@ class CreatePaymentTable extends Migration
          * id : 自增ID
          * name : 支付接口名称(支付宝,财付通...)
          * function_name : 处理支付的函数名,方便前端API调用
+         * level : 所属层级（1网上银行2微信3支付宝4财富通）
          * status : 接口状态(1:正常,0:关闭)
          * */
         Schema::create('payment',function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
             $table->string('function_name');
+            $table->tinyInteger('level')->default(0);
             $table->tinyInteger('status')->default(1);
         });
     }

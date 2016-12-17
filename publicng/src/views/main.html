@@ -1,0 +1,59 @@
+<!--header-->
+<div class="pg-hd-section">
+    <div class="pg-hd-nav clearfix">
+        <ul class="pg-nav-l ">
+            <li><a ui-sref="#" ng-click="getMenu(0)">系统</a></li>
+            <li><a ui-sref="#" ng-click="getMenu(1)">运营</a></li>
+            <li><a ui-sref="#" ng-click="getMenu(2)">财务</a></li>
+            <li><a ui-sref="#" ng-click="getMenu(3)">客服</a></li>
+            <li><a ui-sref="#" ng-click="getMenu(4)">会员</a></li>
+            <li><a ui-sref="#" ng-click="getMenu(5)">代理</a></li>
+            <li><a ui-sref="#" ng-click="getMenu(6)">游戏</a></li>
+        </ul>
+        <ul class="pg-nav-r ">
+            <li class="pg-r-item">
+                <span>在线</span>
+                <span>0</span>
+            </li>
+            <li class="pg-r-item">
+                <span>优惠</span>
+                <span>0</span>
+            </li>
+            <li class="pg-r-item">
+                <span>代理</span>
+                <span>0</span>
+            </li>
+            <li class="pg-r-item">
+                <span>反水</span>
+                <span>0</span>
+            </li>
+            <li class="pg-r-item">
+                <span>入款</span>
+                <span>0</span>
+            </li>
+            <li class="pg-r-item">
+                <span>提款</span>
+                <span>0</span>
+            </li>
+            <li class="pg-r-item pg-item-icon">
+
+            </li>
+            <li class="pg-r-item pg-item-admin">
+                admin
+            </li>
+        </ul>
+    </div>
+    <!--//nav-->
+    <!--menu-->
+    <div class="pg-hd-menu">
+        <li ng-repeat="value in menuData track by $index">
+            <a ui-sref="{{value.urlValue}}" ui-sref-active="menu-active" class="pg-menu-item" >{{value.name}}</a>
+        </li>
+    </div>
+    <!--//menu-->
+</div>
+<!--//header-->
+
+<div ui-view class="main-con">
+
+</div>

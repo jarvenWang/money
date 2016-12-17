@@ -12,7 +12,7 @@ class PaymentController extends CommonController
 {
 
     /**
-     * 入款记录列表
+     * !!入款记录列表!!
      * @author wjb
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -40,7 +40,7 @@ class PaymentController extends CommonController
     }
 
     /**
-     * 入款记录条件查询和分页方法
+     * !!入款记录条件查询和分页方法!!
      * @author wjb
      * @param Request $request
      * @return array
@@ -109,7 +109,7 @@ class PaymentController extends CommonController
     }
 
     /**
-     * 出款记录条件查询和分页方法
+     * !!出款记录条件查询和分页方法!!
      * @author wjb
      * @param Request $request
      * @return array
@@ -177,7 +177,7 @@ class PaymentController extends CommonController
         return $arr;
     }
     /**
-     * 删除记录方法
+     * !!删除记录方法!!
      * @author wjb
      * @param Request $request
      */

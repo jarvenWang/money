@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Input;
 class SetMoneyController extends CommonController
 {
     /**
-     * 加扣款页面
+     * !!加扣款页面!!
      * @author wjb
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -25,7 +25,7 @@ class SetMoneyController extends CommonController
     }
 
     /**
-     * 查询用户名是否存在
+     * !!查询用户名是否存在!!
      * @author wjb
      * @param Request $request
      * @return array
@@ -46,6 +46,10 @@ class SetMoneyController extends CommonController
         }
     }
 
+    /**
+     * !!改变余额!!
+     * @param Request $request
+     */
     public function change_money(Request $request){
         //检查权限
         $this->check_permissin($this->route);

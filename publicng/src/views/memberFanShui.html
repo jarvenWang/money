@@ -1,0 +1,89 @@
+<div class="pg-con-bg">
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li ng-class="{'layui-this': tabType==0}" ng-click="go(0)">返水审核</li>
+            <li ng-class="{'layui-this': tabType==1}" ng-click="go(1)">返水历史</li>
+        </ul>
+        <div class="layui-tab-content com-reset-label">
+            <!--返水审核-->
+            <div class="layui-tab-item" ng-class="{'layui-show': tabType==0}">
+                <!--search -->
+                <div class="fscheck-head-box" >
+                    <div class="fscheck-form clearfix">
+                        <div class="fscheck-item">
+                            <div class="in-datachoose-box">
+                                <input id="date" class="laydate-icon fscheck-date">
+                            </div>
+                        </div>
+                        <div class="fscheck-item w180">
+                            <input type="text" name="name"  ng-model="user_name" placeholder="请输入查询的会员账号" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="fscheck-item">
+                            <button class="layui-btn layui-btn-normal" ng-click="clickQuery()">查询</button>
+                        </div>
+                        <div class="fscheck-item">
+                            <button class="layui-btn layui-btn-primary" ng-click="clickReset()">重置</button>
+                        </div>
+                    </div>
+                </div>
+                <!--//search-->
+                <!-- list  -->
+                <table  class="tablesorter table " ts-wrapper>
+                    <thead>
+                    <tr>
+                        <th align="center" ><input type="checkbox"  name="all" ng-model="selectAll" ng-click="checkAll(selectAll)">{{selectAll}}</th>
+                        <th align="center" ts-criteria="name">会员账号</th>
+                        <th align="center" ts-criteria="betting">有效投注</th>
+                        <th align="center" ts-criteria="return_money">返水金额23423334.6</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in fanShuiCheckData track by $index" ng-if="fanShuiCheckData.length!=0" ts-repeat ts-hide-no-data>
+                        <td align="center"><input type="checkbox" name="chk" ng-model="x" ng-click="chk(x,item)" ng-checked="selectAll" ></td>
+                        <td align="center">{{item.name}}</td>
+                        <td align="center">{{item.betting}}</td>
+                        <td align="center">{{item.return_money}}</td>
+                    </tr>
+                    <tr align="center" ng-if="fanShuiCheckData.length==0">
+                        <td colspan="30" align="center">没有数据</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- //list  -->
+            </div>
+            <!--//返水审核-->
+            <!--返水历史-->
+            <div class="layui-tab-item"  ng-class="{'layui-show': tabType==1}">
+                <div class="fsHistory-tit">只显示最近一个月的返水记录</div>
+                <!-- list  -->
+                <table  class="tablesorter table " ts-wrapper>
+                    <thead>
+                    <tr>
+                        <th align="center" ts-criteria="fanshui_time">返水日期</th>
+                        <th align="center" ts-criteria="num">返水人数</th>
+                        <th align="center" ts-criteria="effective_betting">有效投注</th>
+                        <th align="center" ts-criteria="betting">返水金额</th>
+                        <th align="center" ts-criteria="operation_time">操作时间</th>
+                        <th align="center" >操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in fanShuiHistory track by $index" ng-if="fanShuiHistory.length!=0" ts-repeat ts-hide-no-data>
+                        <td align="center">{{item.fanshui_time}}</td>
+                        <td align="center">{{item.num}}</td>
+                        <td align="center">{{item.effective_betting}}</td>
+                        <td align="center">{{item.betting}}</td>
+                        <td align="center">{{item.operation_time}}</td>
+                        <td align="center"><a href="javascript:;" class="comtb-btn combtn-color01">查看</a></td>
+                    </tr>
+                    <tr align="center" ng-if="fanShuiHistory.length==0">
+                        <td colspan="30" align="center">没有数据</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- //list  -->
+            </div>
+            <!--//返水历史-->
+        </div>
+    </div>
+</div>

@@ -17,6 +17,8 @@ class CreateGradeTable extends Migration
         /*
          * id : 等级表自增ID
          * reseller_id : 经销商表自增ID
+         * total_members : 会员总数
+         * game_ids : 活动表关联id 1，2，3表示 有id为1，2，3的活动
          * name : 等级称号
          * private_service : 专属服务
          * sort : 等级排序
@@ -34,10 +36,12 @@ class CreateGradeTable extends Migration
             $table->increments('id');
             $table->integer('reseller_id');
             $table->string('name');
+            $table->string('game_ids')->nullable();// 1,2,3
             $table->integer('private_service');
             $table->integer('sort')->default(0);
             $table->integer('min_points')->default(0);
             $table->integer('max_points');
+            $table->integer('total_members')->default(0);
             $table->timestamp('from_date')->nullable();
             $table->timestamp('to_date')->nullable();
             $table->string('url')->nullable();

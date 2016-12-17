@@ -19,8 +19,8 @@ class CreatePaymentLogTable extends Migration
          * uid : 会员id
          * money : 金额
          * type : （出）入款类型(0:默认 ，1：微信支付 2：支付宝支付 3.....)
-         * status : （出）入款状态(1:首存审核成功,0:审核中，2：成功 3待审)
-         * account：（出）入款账号
+         * status : （出）入款状态(1:首存审核成功,0:审核中，2：成功 3待审 4失败)
+         * (account：（出）入款账号 暂时注释掉)
          * apply_time：申请时间
          * check_time：审核时间
          * remark：备注信息
@@ -33,7 +33,7 @@ class CreatePaymentLogTable extends Migration
             $table->double('money',9,2)->default(0);
             $table->tinyInteger('type')->default(0);
             $table->tinyInteger('status')->default(0);
-            $table->string('account');
+            //$table->string('account');
             $table->timestamp('check_time')->nullable();;
             $table->timestamp('apply_time')->nullable();;
             $table->string('remark');

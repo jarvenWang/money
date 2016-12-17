@@ -1,0 +1,37 @@
+<div class="login-box">
+    <div class="login-picture"></div>
+    <div class="login-header">后台登录</div>
+    <form class="login-con" novalidate name="login_form">
+        <div class="layui-form-item">
+            <div class="layui-input-block login-item">
+                <input type="text" ng-model="username" name="username"   required ng-minlength=6 ng-maxlength=20 ngFocus placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="error" ng-show="login_form.username.$dirty && login_form.username.$invalid && !login_form.username.$focused">
+            4-16位，须字母开头，支持数字和下划线
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block login-item">
+                <input type="password" ng-model="password"  name="password" required  placeholder="请输入密码" ngFocus autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="error" ng-show="login_form.password.$dirty && login_form.password.$invalid && !login_form.password.$focused">
+            6-20位，由字母，数字，特殊字符其中至少两种类型组成
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-inline login-item w170">
+                <input type="text" ng-model="code" name="code" required  placeholder="请输入验证码" autocomplete="off" ngFocus class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux login-vImgBox"> <img ng-src="{{url}}" /> </div>
+            <span class="login-changepic" ng-click="changCode()">换一张</span>
+        </div>
+        <div class="error" ng-show="login_form.code.$dirty && login_form.code.$invalid && !login_form.code.$focused">
+            验证码不能为空
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block login-item">
+                <button class="layui-btn btn-color02 login-btn" ng-class="{'btn-color01': login_form.$valid}" ng-disabled="!login_form.$valid" ng-click="login()">登录</button>
+            </div>
+        </div>
+    </form>
+</div>

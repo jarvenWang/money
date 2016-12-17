@@ -1,0 +1,79 @@
+/**
+ *  全站表格样式 
+ */
+table.tablesorter {
+	font-family:"微软雅黑";
+	background-color: #CDCDCD;
+	/* margin:10px 0pt 15px; */
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+}
+ table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	/* background-color: #5489ba;
+	border-right: 1px solid #72b0d3; */
+	background-color: #eeeeee;
+	border-right: 1px solid #ddd;
+	border-top:1px solid #ddd;
+	font-size: 14px;
+	height: 40px;
+	line-height: 23px;
+	color:#000;
+	font-weight: 600;
+}
+ table.tablesorter thead tr th:nth-child(1), table.tablesorter tfoot tr th:nth-child(1){
+	border-left: 1px solid #ddd;
+ }
+.in-content-wrap .table th{
+	/* border-top:1px solid red; */
+}
+table.tablesorter thead tr .header {
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	height: 30px;
+	line-height: 30px;
+	/*background-color: #FFF;*/
+	vertical-align: top;
+     border-bottom: 1px solid #ddd;
+     border-right: 1px solid #ddd;
+}
+table.tablesorter tbody tr td:nth-child(1){
+	border-left: 1px solid #ddd;
+}
+table.tablesorter tbody tr{
+	background-color:#fff;
+}
+table.tablesorter tbody tr:hover{
+	background-color:#eeeeee;
+}
+/*table.tablesorter tbody tr:nth-child(2n) td {
+	background-color:#eeeeee;
+}*/
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+	background-color: #ddd;
+	/* border-top:1px solid #ddd; */
+	/* border-bottom::1px solid #34495e; */
+}
+.table{
+	margin-bottom: 0;
+}
+.table thead th{
+	text-align: center;
+}
+.table>thead:first-child>tr:first-child>th {
+   /*  border-top: 1px solid #34495e; */
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6;
+}

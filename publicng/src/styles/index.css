@@ -1,0 +1,282 @@
+.pg-wrap{
+    min-width:1200px;
+    width:100%;
+}
+/*----------common-------*/
+.main-con{
+    padding:10px;
+}
+.pg-con-bg{
+    background-color:#fff;
+    padding:10px;
+}
+.main-con .layui-form-item{
+    margin-bottom:0;
+    margin-top:15px;
+}
+.layui-form-item .btn-color02{
+    background-color:#CCCCCC;
+}
+.layui-form-item .btn-color01{
+    background-color:#108EE9;
+}
+.layui-form-item .layui-form-radio i:hover, .layui-form-item .layui-form-radioed i{
+    color:#108ee9;
+}
+.layui-form-item .layui-btn-primary:hover{
+    border:1px solid #108ee9;
+}
+.pg-con-bg .layui-tab-content{
+    padding:10px 0;
+}
+.com-reset-label .layui-form-pane .w120{
+    width:120px;
+}
+.com-reset-label .layui-form-pane .ml152{
+    margin-left: 152px;
+}
+.w100{
+    width:100px;
+}
+.w180{
+    width:180px;
+}
+.comtb-btn{
+    display: inline;
+   /* width: 40px;
+    height: 18px;*/
+    /*line-height: 18px;*/
+   /* margin-top: 6px;*/
+    cursor:pointer;
+    padding:2px 5px;
+}
+.pg-con-bg .combtn-color01{
+    color:#108EE9;
+}
+.pg-con-bg .combtn-color02{
+    color:#00CC66;
+}
+.pg-con-bg .combtn-color03{
+    color:#000;
+}
+.pg-con-bg .combtn-color01:hover{
+    color:#0E92E9;
+}
+.comtb-btn-detail{
+    background-color:#108EE9;
+}
+.comtb-btn-edit{
+    background-color:#e6624b;
+}
+.pg-con-bg .comtb-btn-opert{
+    color:#00CC66;
+}
+.pg-con-bg .com-select{
+    height:38px;
+    width:100%;
+    outline:none;
+    border:1px solid #e6e6e6;
+    background-color:#fff;
+}
+.pg-con-bg .com-radio-box{
+    line-height:35px;
+}
+/*input.ng-invalid {
+    border: 1px solid red;
+}*/
+.main-con .error{
+    color:red;
+}
+
+/*----------//common-------*/
+/*---------header---------*/
+.pg-hd-section{
+    height:90px;
+}
+.pg-hd-nav{
+    height:50px;
+    background-color:#000000;
+    font-size:14px;
+    color:#fff;
+}
+.pg-hd-nav a{
+    color:#fff;
+}
+.pg-nav-l{
+    float: left;
+    width:595px;
+    overflow:hidden;
+}
+.pg-nav-l li{
+    float: left;
+    width: 85px;
+    line-height: 50px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.pg-nav-r{
+    float: right;
+    width:40%;
+    overflow:hidden;
+}
+.pg-r-item{
+    float: left;
+    width: 12.5%;
+    height:50px;
+    cursor:pointer;
+}
+.pg-r-item span{
+    display:block;
+    width:100%;
+    height:25px;
+    text-align:center;
+    line-height:25px;
+}
+.pg-item-icon{
+    background:url(../images/head-operte.png) no-repeat center center;
+}
+.pg-item-admin{
+    text-align:center;
+    line-height:50px;
+}
+.pg-hd-menu{
+    height:40px;
+    background-color:#fff;
+}
+.pg-hd-menu li{
+    float:left;
+}
+.pg-hd-menu .pg-menu-item{
+    display:inline-block;
+    padding:0 10px;
+    line-height:40px;
+    color:#666666;
+}
+.pg-hd-menu .menu-active{
+    color:#108EE9;
+}
+/*---------//header-------*/
+/*-----------login-------*/
+.login-box{
+    width:380px;
+    margin:150px auto;
+   /* border:1px solid rgba(16, 142, 233, 1);*/
+    background-color: #fff;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    position: relative;
+}
+.login-header{
+    font-size:18px;
+    color:#676767;
+    text-align: center;
+    height:35px;
+    line-height:35px;
+    padding-top:70px;
+}
+.login-con{
+    padding:15px;
+}
+.login-picture{
+    width:120px;
+    height:120px;
+    background:url(../images/login-user.png) no-repeat center center;
+    position: absolute;
+    left:50%;
+    margin-left:-60px;
+    top:-60px;
+}
+.login-con .login-item{
+    margin-left:0px;
+
+}
+.login-con .login-btn{
+    width:100%;
+}
+.login-con .login-vImgBox{
+    padding:4px 0;
+}
+.login-con .layui-form-item .w170{
+    width:170px;
+}
+.login-changepic{
+    display:inline-block;
+    height:38px;
+    line-height:38px;
+    cursor:pointer;
+}
+/*-----------//login-------*/
+/*----------sysAccount-----------*/
+#pagenation{
+    padding:15px 0;
+    text-align: center;
+}
+.sysAccHead-box{
+    height:50px;
+    position: relative;
+}
+.sysAccount-form{
+    width:680px;
+    margin:0 auto;
+}
+.pg-con-bg .acc-item{
+    margin-left: 10px;
+    float:left;
+}
+.acc-addmember{
+    position: absolute;
+    right:0;
+    top:0;
+}
+.sysAcc-add{
+    padding:10px;
+}
+.sysAcc-add .sysAcc-chose-job{
+    padding:0;
+    width:400px;
+}
+.tab-box{
+    padding-top:10px;
+}
+/*----------//sysAccount---------*/
+/*----------member---------*/
+.memberHead-box{
+    height:50px;
+    position: relative;
+}
+.member-form{
+    width:900px;
+    margin:0 auto;
+}
+.member-form .member-item{
+    margin-left: 10px;
+    float:left;
+}
+.fscheck-head-box{
+    height:50px;
+    postion:relative;
+}
+.fscheck-form{
+    width:500px;
+    margin: 0 auto;
+}
+.fscheck-form .fscheck-item{
+    margin-left: 10px;
+    float:left;
+}
+.pg-con-bg .fscheck-date{
+    width:110px;
+    height:35px;
+    border:1px solid #e6e6e6;
+}
+.fsHistory-tit{
+    height:40px;
+    text-align: center;
+    line-height:40px;
+    border-top:1px solid #e6e6e6;
+    border-left:1px solid #e6e6e6;
+    border-right:1px solid #e6e6e6;
+}
+/*----------//member---------*/

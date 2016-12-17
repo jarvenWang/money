@@ -149,7 +149,7 @@ class SetApiController extends CommonController
     }
 
     /**
-     * 删除安全转账设置
+     * !!删除安全转账设置!!
      * @author wjb
      * @param Request $request
      */
@@ -260,7 +260,7 @@ class SetApiController extends CommonController
     }
 
     /**
-     * 获取安全转账设置
+     * !!获取安全转账设置!!
      * @param Request $request
      * @return array
      */
@@ -292,7 +292,7 @@ class SetApiController extends CommonController
     }
 
     /**
-     * 添加安全转账
+     * !!添加安全转账!!
      * @author wjb
      */
     public function add_transfer(Request $request){
@@ -333,7 +333,7 @@ class SetApiController extends CommonController
     }
 
     /**
-     * 修改安全转账设置
+     * !!修改安全转账设置!!
      * @author wjb
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse

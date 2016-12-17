@@ -1,0 +1,100 @@
+<div class="pg-con-bg">
+    <!--search -->
+    <div class="memberHead-box" >
+        <div class="member-form clearfix">
+            <div class="acc-item w100">
+                <select name="name" class="com-select" ng-model="search.type">
+                    <option value="0">会员账号</option>
+                    <option value="1">上级代理</option>
+                </select>
+            </div>
+            <div class="acc-item w100">
+                <select class="com-select" name="state" ng-model="search.grade_name"
+                >
+                    <option value="">所有等级</option>
+                    <option value="{{o.id}}" ng-repeat="o in gradeData">{{o.name}}</option>
+                </select>
+            </div>
+
+            <div class="acc-item w100">
+                <select class="com-select" name="state" ng-model="search.level_name"
+                >
+                    <option value="">所有层级</option>
+                    <option value="{{o.id}}" ng-repeat="o in levelData">{{o.name}}</option>
+                </select>
+            </div>
+            <div class="acc-item w100" style="display:none;">
+                <select name="status" class="com-select" ng-model="search.status">
+                    <option value="">所有状态</option>
+                    <option value="0">停用</option>
+                    <option value="1">启用</option>
+                </select>
+            </div>
+            <div class="acc-item w100">
+                <select name="page" class="com-select" ng-model="search.num">
+                    <option value="10">每页10条</option>
+                    <option value="20">每页20条</option>
+                    <option value="50">每页50条</option>
+                    <option value="100">每页100条</option>
+                </select>
+            </div>
+            <div class="acc-item w180">
+                <input type="text" name="title"  ng-model="search.inputValue" placeholder="{{search.type==0 ? '请输入会员账号' : '请输入上级代理'}}" autocomplete="off" class="layui-input">
+            </div>
+            <div class="acc-item">
+                <button class="layui-btn layui-btn-normal" ng-click="clickQuery()">查询</button>
+            </div>
+            <div class="acc-item">
+                <button class="layui-btn layui-btn-primary" ng-click="clickReset()">重置</button>
+            </div>
+            <div class="acc-addmember" style="display:none;">
+                <button class="layui-btn layui-btn-primary" ng-click="clickAdd()">添加员工</button>
+            </div>
+
+        </div>
+    </div>
+    <!--//search-->
+    <!-- list  -->
+    <table   class="tablesorter table " ts-wrapper>
+        <thead>
+        <tr>
+            <th align="center" ts-criteria="agents_name">上级代理</th>
+            <th align="center" ts-criteria="name">会员账号</th>
+            <th align="center" ts-criteria="grade_name">等级</th>
+            <th align="center" ts-criteria="level_name">层级</th>
+            <th align="center" ts-criteria="fandian">余额</th>
+            <th align="center" ts-criteria="balance">积分</th>
+            <th align="center" ts-criteria="status">手机号</th>
+            <th align="center" >状态</th>
+            <th align="center" >操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in memberListData track by $index" ng-if="memberListData.length!=0" ts-repeat ts-hide-no-data>
+            <td align="center">{{item.agents_name}}</td>
+            <td align="center">{{item.name}}</td>
+            <td align="center">{{item.grade_name}}</td>
+            <td align="center">{{item.level_name}}</td>
+            <td align="center">{{item.fandian}}</td>
+            <td align="center">{{item.balance}}</td>
+            <td align="center">{{item.mobile}}</td>
+            <td align="center"><span class="combtn-color02"  ng-if="item.status==1">启用</span><span class="combtn-color03" ng-if="item.status==0">停用</span></td>
+            <td align="center">
+                <a href="javascript:;" class="comtb-btn combtn-color01">详情</a>
+                <a href="javascript:;" class="comtb-btn combtn-color01" ng-click="clickModify(item)">编辑</a>
+                <a href="javascript:;" class="comtb-btn combtn-color01">操作日志</a>
+            </td>
+        </tr>
+        <tr align="center" ng-if="memberListData.length==0">
+            <td colspan="30" align="center">没有数据</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div id="pagenation"></div>
+    <!-- //list  -->
+
+
+
+    </div>
+</div>

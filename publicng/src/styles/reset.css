@@ -1,0 +1,111 @@
+html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal
+}
+article, aside, dialog, figure, footer, header, hgroup, nav, section, blockquote {
+	display: block;
+}
+input, button, textarea, select, optgroup, option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit
+}
+input, button,textarea,select{
+	overflow: visible;
+	vertical-align: middle;
+	outline: none
+}
+button, input, select, textarea {
+	font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei", "\5B8B\4F53";
+	font-size: 12px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+ul, ol,li {
+	list-style: none;
+}
+img {
+	border: 0 none;
+	vertical-align: top;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: none;
+}
+table {
+	/* border-collapse: collapse; */
+	border-spacing: 0;
+}
+strong, em, i {
+	font-style: normal;
+	font-weight: normal;
+}
+ins {
+	text-decoration: underline;
+}
+del {
+	text-decoration: line-through;
+}
+mark {
+	background: none;
+}
+input::-ms-clear {
+	display: none !important;
+}
+body {
+	background: #F9F9F9; /* #F9F9F9 */
+	font-family: '微软雅黑';
+	font-size:12px;
+
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+a:hover, a:active, a:link, a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* 重置bootstrap中的样式，boostrap中会与日期插件样式冲突 */
+/* * {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+} */
+
+/*placeholder字体颜色*/
+/*
+::-webkit-input-placeholder {
+
+	!* WebKit browsers *!
+	color: #34495e;
+	text-indent: 5px;
+}
+:-moz-placeholder {
+
+	!* Mozilla Firefox 4 to 18 *!
+	color: #34495e;
+	text-indent: 5px;
+}
+::-moz-placeholder {
+
+	!* Mozilla Firefox 19+ *!
+	color: #34495e;
+	opacity: 1;
+	text-indent: 5px;
+}
+:-ms-input-placeholder {
+
+	!* Internet Explorer 10+ *!
+	color: #34495e;
+	text-indent: 5px;
+}*/

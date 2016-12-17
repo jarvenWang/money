@@ -30,8 +30,11 @@ class CreateAgentsTable extends Migration
          * balance : 帐户余额
          * frozen_balance : 帐户被冻结金额
          * frozen_login_time : 帐户冻结登陆时间,在此时间之前帐户无法登陆
+         * application_time : 申请时间
          * fandian : 代理反水设置
          * status : 帐户状态(1:正常,0:关闭)
+         * approved : 0审核中，1审核通过，2未通过审核
+         * approved_reason : 审核失败原因
          * remark : 备注信息
          * max_agents : 设置代理帐户最大能开的下级代理数
          * max_members : 设置代理帐户最大能开的下级会员数
@@ -51,7 +54,7 @@ class CreateAgentsTable extends Migration
          * */
         Schema::create('agents',function(Blueprint $table){
             $table->increments('id');
-            $table->string('parent_id')->nullable();
+            $table->string('parent_id')->default(0);
             $table->integer('reseller_id');
             $table->integer('agent_id')->default(0);
             $table->integer('level_id')->default(0);
@@ -68,6 +71,8 @@ class CreateAgentsTable extends Migration
             $table->timestamp('frozen_login_time')->nullable();
             $table->decimal('fandian',5,2)->default(0);
             $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('approved')->default(0);
+            $table->text('approved_reason')->nullable();
             $table->text('remark')->nullable();
             $table->integer('max_agents')->default(0);
             $table->integer('max_members')->default(0);
@@ -80,6 +85,7 @@ class CreateAgentsTable extends Migration
             $table->string('created_ip',15);
             $table->string('last_login_ip',15)->nullable();
             $table->timestamp('last_login_at')->nullable();
+            $table->timestamp('application_time')->nullable();
             $table->string('last_login_address')->nullable();
             $table->integer('number')->default(0);
             $table->string('remember_token');

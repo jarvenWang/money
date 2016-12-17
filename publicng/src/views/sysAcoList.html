@@ -1,0 +1,129 @@
+<div>
+    <!--search -->
+    <div class="sysAccHead-box" >
+        <div class="sysAccount-form clearfix">
+            <div class="acc-item w100">
+                <select name="city" class="com-select" ng-model="search.type">
+                    <option value="0">员工账号</option>
+                    <option value="1">昵称</option>
+                </select>
+            </div>
+            <div class="acc-item w100">
+                <select name="city" class="com-select" ng-model="search.status">
+                    <option value="">所有状态</option>
+                    <option value="0">停用</option>
+                    <option value="1">启用</option>
+                </select>
+            </div>
+            <div class="acc-item w100">
+                <select name="city" class="com-select" ng-model="search.num">
+                    <option value="10">每页10条</option>
+                    <option value="20">每页20条</option>
+                    <option value="50">每页50条</option>
+                    <option value="100">每页100条</option>
+                </select>
+            </div>
+            <div class="acc-item w180">
+                <input type="text" name="title"  ng-model="search.allname" placeholder="{{search.nameType==0 ? '请输入员工账号' : '请输入昵称'}}" autocomplete="off" class="layui-input">
+            </div>
+            <div class="acc-item">
+                <button class="layui-btn layui-btn-normal" ng-click="clickQuery()">查询</button>
+            </div>
+            <div class="acc-item">
+                <button class="layui-btn layui-btn-primary" ng-click="clickReset()">重置</button>
+            </div>
+            <div class="acc-addmember">
+                <button class="layui-btn layui-btn-primary" ng-click="clickAdd()">添加员工</button>
+            </div>
+
+        </div>
+    </div>
+    <!--//search-->
+    <!-- list  -->
+    <table  class="tablesorter table " ts-wrapper>
+        <thead>
+        <tr>
+            <th align="center" ts-criteria="id" class="header">编号</th>
+            <th align="center" ts-criteria="name" class="header">员工账号</th>
+            <th align="center" ts-criteria="username" class="header">昵称</th>
+            <th align="center" ts-criteria="role_name">职务</th>
+            <th align="center" ts-criteria="last_login_ip">登录IP</th>
+            <th align="center" ts-criteria="last_online">最后登录时间</th>
+            <th align="center">状态</th>
+            <th align="center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in sysAccData track by $index" ng-if="sysAccData.length!=0" ts-repeat ts-hide-no-data>
+            <td align="center">{{item.id}}</td>
+            <td align="center">{{item.name}}</td>
+            <td align="center">{{item.username}}</td>
+            <td align="center">{{item.role_name}}</td>
+            <td align="center">{{item.last_login_ip}}</td>
+            <td align="center">{{item.last_online}}</td>
+            <td align="center"><span class="combtn-color02"  ng-if="item.status==1">启用</span><span class="combtn-color03" ng-if="item.status==0">停用</span></td>
+            <td align="center">
+                <a href="javascript:;" class="comtb-btn combtn-color01" ng-click="clickModify(item)">编辑</a>
+                <a href="javascript:;" class="comtb-btn combtn-color01">操作日志</a>
+            </td>
+        </tr>
+        <tr align="center" ng-if="sysAccData.length==0">
+            <td colspan="30" align="center">没有数据</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div id="pagenation"></div>
+    <!-- //list  -->
+    <!--弹框-->
+    <div class="sysAcc-add" style="display:none;">
+        <form name="acount_form" novalidate>
+            <div class="layui-form-item">
+                <label class="layui-form-label">员工账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username"  ng-model="bomb.username" required ng-minlength=6 ng-maxlength=20 ngFocus placeholder="请输入员工账号" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux" ng-class="{'error': acount_form.username.$dirty && acount_form.username.$invalid && !acount_form.username.$focused}">4-16位，须字母开头，支持数字和下划线</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">登录密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password"  ng-model="bomb.password" required ng-minlength=6 ng-maxlength=20 ngFocus placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux" ng-class="{'error': acount_form.password.$dirty && acount_form.password.$invalid && !acount_form.password.$focused}">6-20位，由字母，数字，特殊字符的其中两种类型混合组成</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" ng-model="bomb.name" required placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux" ng-class="{'error': acount_form.name.$dirty && acount_form.name.$invalid && !acount_form.name.$focused}">例如： jack       小刘       王总</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">职务</label>
+                <div class="layui-input-inline">
+                    <select class="com-select" name="state" ng-model="bomb.selectJurGroup" ng-options="o.display_name for o in jurGroupData"
+                    ></select>
+                </div>
+                <div class="layui-form-mid layui-word-aux sysAcc-chose-job">选择员工职务，会对应相应的权限；
+                    如果要修改职务权限，请在职务权限中进行修改或添加</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">单选框</label>
+                <div class="layui-input-block com-radio-box">
+                    <label><input type="radio" ng-model="bomb.statu" value="1"> 启用</label>
+                    <label><input type="radio" ng-model="bomb.statu" value="0"> 停用</label>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn btn-color02" ng-class="{'btn-color01': acount_form.$valid}" ng-disabled="!acount_form.$valid" ng-click="submitAdd()" ng-if="type==1">添加</button>
+                    <button class="layui-btn" ng-click="submitModify()" ng-if="type==2">编辑</button>
+                    <button type="cancel" class="layui-btn layui-btn-primary" ng-click="cancelBomb()">取消</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <!--//弹框-->
+</div>

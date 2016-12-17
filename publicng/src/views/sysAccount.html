@@ -1,0 +1,12 @@
+<div class="pg-con-bg">
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li ng-class="{'layui-this': type==0}" ng-click="go(0)">员工列表</li>
+            <li ng-class="{'layui-this': type==1}" ng-click="go(1)">职务权限</li>
+            <li ng-class="{'layui-this': type==2}" ng-click="go(2)">权限设置</li>
+        </ul>
+        <div ui-view="" class="tab-box">
+
+        </div>
+    </div>
+</div>

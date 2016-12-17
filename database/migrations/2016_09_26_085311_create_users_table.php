@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
          * level_id : 所属会员层级ID 1
          * grade_id : 所属会员等级ID 2
          * name : 代理真实姓名 3
+         * gender : 性别 0 未知 1 男 2 女
+         * address : 地址
          * username : 登陆用户名 4
          * password : 登陆密码
          * temp_password : 登陆时生成的临时密码
@@ -56,6 +58,8 @@ class CreateUsersTable extends Migration
             $table->integer('agent_id')->default(0);
             $table->integer('level_id')->default(0);
             $table->integer('grade_id')->default(0);
+            $table->integer('gender')->default(0);
+            $table->string('address');
             $table->string("name");
             $table->string('username');
             $table->string('password');

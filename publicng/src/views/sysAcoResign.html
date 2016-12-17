@@ -1,0 +1,33 @@
+<div>
+    <!-- list  -->
+    <table  class="tablesorter table " ts-wrapper>
+        <thead>
+        <tr>
+            <th align="center" ts-criteria="id" class="header">职务名称</th>
+            <th align="center">职务权限</th>
+            <th align="center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in sysAccData track by $index" ng-if="sysAccData.length!=0" ts-repeat ts-hide-no-data>
+            <td align="center">{{item.id}}</td>
+            <td align="center">{{item.name}}</td>
+            <td align="center">{{item.username}}</td>
+            <td align="center">{{item.role_name}}</td>
+            <td align="center">{{item.last_login_ip}}</td>
+            <td align="center">{{item.last_online}}</td>
+            <td align="center"><span class="combtn-color02"  ng-if="item.status==1">启用</span><span class="combtn-color03" ng-if="item.status==0">停用</span></td>
+            <td align="center">
+                <a href="javascript:;" class="comtb-btn combtn-color01" ng-click="clickModify(item)">编辑</a>
+                <a href="javascript:;" class="comtb-btn combtn-color01">操作日志</a>
+            </td>
+        </tr>
+        <tr align="center" ng-if="sysAccData.length==0">
+            <td colspan="30" align="center">没有数据</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div id="pagenation"></div>
+    <!-- //list  -->
+</div>

@@ -1,0 +1,194 @@
+/*
+*  fliename  [common]
+*  des          [书写公用的样式]
+ */
+
+/* 自定义公用样式 */
+.com-fl {
+	float: left;
+}
+.com-fr {
+	float: right;
+}
+.clearfix {
+	clear: both;
+	zoom: 1
+}
+.clearfix:after {
+	clear: both;
+	display: block;
+	height: 0;
+	font-size: 0;
+	content: ".";
+	visibility: hidden;
+}
+.ml5{
+	margin-left: 5px;
+}
+
+/**
+* 全站按钮样式
+*/
+/* smallbtn  针对表格编辑中的按钮样式 */
+.com-smallbtn{
+	display: inline-block;
+	width: 40px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 6px;
+}
+/* com-bigbtn 针对表单提交类按钮 */
+.com-bigbtn{
+	width:100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color:#fff;
+	display: inline-block;
+	border:none;
+	outline: none;
+}
+/* com-searchbtn 针对搜索按钮 */
+.com-searchbtn{
+	display: block; 
+	width:100px;
+	height: 32px;
+	text-align: center;
+	line-height: 30px;
+	color:#fff;
+}
+/* 红色 */
+.com-btn-color01{	
+	background-color: #e6624b;
+}
+.com-btn-color01:hover{
+	background-color:#f78989;
+}
+/* 蓝色 */
+.com-btn-color02{
+	background-color: #72b0d3;
+}
+.com-btn-color02:hover{
+	background-color: #3e5d7d;
+}
+
+/**
+ *  全站表单样式
+ */
+.com-form-wrap{
+	/* width:500px; */
+	font-size: 14px;
+}
+.com-form-group{
+	padding: 8px 0;
+	background-color: #F9F9F9;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #eeeeee;
+}
+.com-form-wrap .con-form-group:first-child{
+	border-top:none;
+}
+.com-form-wrap .con-form-group:last-child{
+	border-bottom:none;
+}
+.com-form-l{
+	float: left;
+	display: block;
+	/* width:100px; */
+	width: 13%;
+	text-align: right;
+	padding-top: 2px;
+}
+.com-form-r{
+	float: left;
+	/* width:250px; */
+	width:50%;
+}
+.com-ib{
+	display: inline-block;
+}
+.com-input-text{
+	width: 100%;
+	height: 33px;
+	border:1px solid #ccc;
+	text-indent: 10px;
+	font-size:14px;	
+	 -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.com-input-text:focus,.com-textarea:focus,.com-select:focus{
+	border:1px solid #3c8dbc;
+}
+.com-lh{
+	line-height: 35px;
+}
+.com-textarea{
+	width:100%;
+	height: auto;
+	border:1px solid #ccc;
+	text-indent: 10px;
+	min-height: 100px;
+	font-size:14px;	
+	 -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.com-select{
+	border:1px solid #ccc;
+	width: 100%;
+	height: 35px;
+	font-size:14px;
+}
+.com-select option{
+	height: 25px;
+}
+
+/* *
+* tab切换公用样式 
+* [使用css3样式，兼容ie9以上]
+* 使用的页面： routine-setting.html,
+**/
+#tabs {
+	width: 100%;
+}
+
+#tabs li {
+	float: left;
+	margin-right: 2px;
+}
+.tab-title{
+	border-bottom: 2px solid #5489ba;
+}
+#tabs li {
+	display: block;
+	padding: 10px 20px;
+	background: #5489ba;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+#tabs li:hover {
+	background:#72b0d3;
+}
+
+#tabs_container {
+	margin: 30px 0px 10px 0px;
+	overflow: hidden;
+	position: relative;
+	color: #000;
+	border:1px solid #eeeeee;
+	-moz-box-shadow:5px 5px 0px #B3B3B3; -webkit-box-shadow:5px 5px 0px #B3B3B3; box-shadow:5px 5px 0px #B3B3B3;
+	border-radius: 10px;
+}
+.tabulous_active {
+	background: #72b0d3 !important;	
+}
+.tabulous_active:after{
+	background-color: #72b0d3;
+}
