@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class ChangesController extends CommonController
 {
     /**
-     * !!账变页面!!
+     * 账变页面
      * @author wjb
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -36,7 +36,7 @@ class ChangesController extends CommonController
     }
 
     /**
-     * !!按条件查询并分页!!
+     * 按条件查询并分页
      * @author wjb
      * @param Request $request
      * @return array

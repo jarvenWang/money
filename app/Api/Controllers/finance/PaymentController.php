@@ -31,8 +31,6 @@ class PaymentController extends Controller
      */
     public function deposit_record(Request $request){
         $username =$request->input('username');
-
-
         $start =$request->input('start');
         $end =$request->input('end');
         //当面页数
@@ -60,11 +58,12 @@ class PaymentController extends Controller
                 $where['style']=$style;
             }
         }
+        //
         if(isset($status)){
             $where['status']=$status;
         }
         if($username!=''){
-            $res_user = User::where('username',$username)->get();
+            $res_user = Users::where('username',$username)->get();
             if($res_user->isEmpty()){
                 $arr = array(
                     'status'=>'0',
@@ -79,8 +78,14 @@ class PaymentController extends Controller
             }
             $where['uid']=$uid;
         }
-
-
+        $type = $request->input('type');
+        if(isset($type)){
+            $where['type']=$type;
+        }
+        $order_number = $request->input('order_number');
+        if(isset($order_number)){
+            $where['order_number']=$order_number;
+        }
         if($start !=''){
             $where[]=['created_at','>=', $start];
         }
@@ -92,6 +97,7 @@ class PaymentController extends Controller
 
         //获取管理员数据
         $datas = Payment::where($where)->simplePaginate($num,['*'],'page', $page);
+        //print_r($datas);exit;
         if(!$datas->isEmpty()){
             $columns = getColumnList('payment_log');
             foreach ($datas as $key=>$data){
@@ -100,8 +106,9 @@ class PaymentController extends Controller
                 };
 
             };
-
-            if($style == 3){
+            $type_arr=array();
+            $status_arr=array();
+            if($style == 1){
                 $type_arr = array(
                     '3'=>'在线支付',
                     '4'=>'微信支付',
@@ -110,7 +117,7 @@ class PaymentController extends Controller
                     '7'=>'红利',
                 );
             }
-            if($style == 1){
+            if($style == 3){
                 $type_arr= array(
                     '1'=>'转入',
                     '2'=>'转出',
@@ -133,17 +140,12 @@ class PaymentController extends Controller
                     '4'=>'失败',
                 );
             }
-            if(!is_array($status_arr)){
-                $status_arr='';
-            }
-            if(!is_array($type_arr)){
-                $type_arr='';
-            }
+            $type_arr = $this->arrayToObject($type_arr);
+            $status_arr = $this->arrayToObject($status_arr);
             //提示码
             //$number = 104;
             //返回数组
             $array = $arr_admin;
-
             $arr = array(
                 'status'=>'1',
                 'code'=>"104",
@@ -151,8 +153,8 @@ class PaymentController extends Controller
                 'data'=>array(
                     'list'=>$array,
                     'count'=>$count,
-                    'type'=>$type_arr,
-                    'status'=>$status_arr,
+                    'type_arr'=>$type_arr,
+                    'status_arr'=>$status_arr,
                 )
             );
             return response()->json($arr);
@@ -165,6 +167,15 @@ class PaymentController extends Controller
             return response()->json($arr);
         }
 
+    }
+
+    public function arrayToObject($e){
+        if( gettype($e)!='array' ) return;
+        foreach($e as $k=>$v){
+            if( gettype($v)=='array' || getType($v)=='object' )
+                $e[$k]=(object)arrayToObject($v);
+        }
+        return (object)$e;
     }
 
     /**

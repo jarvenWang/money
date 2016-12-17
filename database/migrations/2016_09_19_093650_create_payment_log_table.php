@@ -17,6 +17,7 @@ class CreatePaymentLogTable extends Migration
         /**
          * id : 自增ID
          * uid : 会员id
+         * order_number:订单号
          * money : 金额
          * type : （出）入款类型(0:默认 ，1：微信支付 2：支付宝支付 3.....)
          * status : （出）入款状态(1:首存审核成功,0:审核中，2：成功 3待审 4失败)
@@ -30,6 +31,7 @@ class CreatePaymentLogTable extends Migration
         Schema::create('payment_log',function(Blueprint $table){
             $table->increments('id');
             $table->integer('uid');
+            $table->string('order_number');
             $table->double('money',9,2)->default(0);
             $table->tinyInteger('type')->default(0);
             $table->tinyInteger('status')->default(0);
